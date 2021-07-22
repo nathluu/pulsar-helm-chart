@@ -29,6 +29,12 @@ broker:
 
 proxy:
   replicaCount: 2
+  service:
+    type: ClusterIP
+
+pulsar_manager:
+  service:
+    type: ClusterIP
 
 auth:
   authentication:
@@ -48,3 +54,13 @@ auth:
     proxy: "proxy-admin"
     # pulsar-admin client to broker/proxy communication
     client: "admin"
+
+monitoring:
+  # monitoring - prometheus
+  prometheus: false
+  # monitoring - grafana
+  grafana: false
+  # monitoring - node_exporter
+  node_exporter: false
+  # alerting - alert-manager
+  alert_manager: false
